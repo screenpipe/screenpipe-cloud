@@ -8,6 +8,31 @@ This cloud connector provides `synced-devices` and `search-synced-content`.
 It does not expose local-only recordings, desktop control, or enterprise team
 records. Signing in does not enable Data Sync or start uploading recordings.
 
+## Quick install in Cursor or VS Code
+
+[Install in Cursor](https://cursor.com/en/install-mcp?name=screenpipe-cloud&config=eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vc2NyZWVucGlwZS5jb20vYXBpL3VzZXIvZGF0YS1zeW5jL21jcCJ9) ·
+[Install in VS Code](https://insiders.vscode.dev/redirect/mcp/install?name=screenpipe-cloud&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fscreenpipe.com%2Fapi%2Fuser%2Fdata-sync%2Fmcp%22%7D)
+
+Each link opens your client's installation prompt with the HTTPS endpoint
+already filled in. Review the configuration, then sign in to Screenpipe through
+OAuth. Data Sync must already be available and enabled on your account. These
+links do not enable uploads or bypass the client's approval step.
+
+If your browser cannot open the installed app, add this remote MCP server in
+your client's MCP settings:
+
+```json
+{
+  "type": "http",
+  "url": "https://screenpipe.com/api/user/data-sync/mcp"
+}
+```
+
+See the official [Cursor install-link documentation](https://prod.cursor.com/docs/mcp/install-links)
+and [VS Code MCP guide](https://code.visualstudio.com/api/extension-guides/ai/mcp).
+The link configuration has been checked against those formats; an authenticated
+end-to-end session in either client has not yet been verified.
+
 ## ChatGPT
 
 For a private developer connection, enable Developer mode if permitted by your
