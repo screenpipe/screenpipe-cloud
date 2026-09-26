@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "screenpipe-cloud",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Search your synced Screenpipe history across devices. Requires Data Sync.",
   "author": {
     "name": "Screenpipe",
     "url": "https://screenpipe.com"
   },
   "homepage": "https://screenpipe.com",
-  "repository": "https://github.com/screenpipe/screenpipe",
+  "repository": "https://github.com/screenpipe/screenpipe-cloud",
   "license": "SEE LICENSE IN LICENSE.md",
   "keywords": [
     "screenpipe",
