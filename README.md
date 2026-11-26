@@ -33,31 +33,30 @@ and [VS Code MCP guide](https://code.visualstudio.com/api/extension-guides/ai/mc
 The link configuration has been checked against those formats; an authenticated
 end-to-end session in either client has not yet been verified.
 
-## ChatGPT
+## ChatGPT & ChatGPT Dots
 
-For a private developer connection, enable Developer mode if permitted by your
-account/workspace, open [Plugins](https://chatgpt.com/plugins), select the plus
-button, and connect this HTTPS MCP endpoint:
+**Screenpipe Cloud (v0.1.1)** is published in the public ChatGPT Plugin Directory and works in standard ChatGPT chats as well as always-on ChatGPT Dots:
+
+- [Install Screenpipe Cloud in ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6ab70cbb9f8c8191a7480706ad7f7c57)
+- [ChatGPT Dots setup guide](https://screenpipe.com/integrations/chatgpt-dots)
+
+Click **Connect**, complete Screenpipe OAuth sign-in (`data-sync:read`), and verify in a new chat or Dot by asking which devices have synced recently. Data Sync must be enabled on at least one Screenpipe device (Screenpipe Business or higher).
+
+For private developer testing, you can also connect the same HTTPS MCP endpoint directly in [Plugins](https://chatgpt.com/plugins) with Developer mode enabled:
 
 ```text
 https://screenpipe.com/api/user/data-sync/mcp
 ```
 
-Complete Screenpipe's OAuth sign-in and review the tools. Use a new conversation
-to ask which devices have synced recently. An empty device list does not mean
-the connector can see local-only recordings.
+## Claude & Claude Duet
 
-The ZIP is a portable plugin package for local plugin hosts and private testing.
-It is not a public ChatGPT listing. Public installation from the directory
-requires a **With MCP** submission and platform review; submit the endpoint,
-not a localhost URL or the Claude Desktop `.mcpb` file.
+**Screenpipe Cloud** is published in the public [Claude Directory](https://claude.ai/directory) and works across Claude web, desktop, mobile, and **Claude Duet** (Duet inherits connectors enabled on your Claude account):
 
-## Claude
+- Search for **Screenpipe Cloud** in [claude.ai/directory](https://claude.ai/directory) and click **Connect**
+- [Claude Duet setup guide](https://screenpipe.com/integrations/claude-duet)
+- [Grok Bot setup guide](https://screenpipe.com/integrations/grokbot)
 
-In Claude's connector settings, add a custom remote connector with the same
-HTTPS URL and complete OAuth sign-in. Availability depends on workspace policy.
-This repository includes `.claude-plugin/plugin.json` and `.mcp.json` for Claude
-plugin hosts. For Claude Code local development, clone this repository and run:
+If your workspace configures connectors manually, add a custom remote connector at `https://claude.ai/customize/connectors` with `https://screenpipe.com/api/user/data-sync/mcp` and complete OAuth sign-in. This repository includes `.claude-plugin/plugin.json` and `.mcp.json` for Claude plugin hosts. For Claude Code local development, clone this repository and run:
 
 ```sh
 claude --plugin-dir /absolute/path/to/screenpipe-cloud
