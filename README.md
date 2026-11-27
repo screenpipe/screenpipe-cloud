@@ -35,12 +35,12 @@ end-to-end session in either client has not yet been verified.
 
 ## ChatGPT & ChatGPT Dots
 
-**Screenpipe Cloud (v0.1.1)** is published in the public ChatGPT Plugin Directory and works in standard ChatGPT chats as well as always-on ChatGPT Dots:
+**Screenpipe Cloud (v0.1.1)** is published in the ChatGPT Plugin Directory. A directory listing does not confirm that a ChatGPT Dot can use the plugin.
 
 - [Install Screenpipe Cloud in ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6ab70cbb9f8c8191a7480706ad7f7c57)
 - [ChatGPT Dots setup guide](https://screenpipe.com/integrations/chatgpt-dots)
 
-Click **Connect**, complete Screenpipe OAuth sign-in (`data-sync:read`), and verify in a new chat or Dot by asking which devices have synced recently. Data Sync must be enabled on at least one Screenpipe device (Screenpipe Business or higher).
+Click **Connect**, complete Screenpipe OAuth sign-in (`data-sync:read`), and verify in a new chat by asking which devices have synced recently. If the plugin is available in your Dot, repeat the test there. Data Sync must be available and enabled on at least one Screenpipe device.
 
 For private developer testing, you can also connect the same HTTPS MCP endpoint directly in [Plugins](https://chatgpt.com/plugins) with Developer mode enabled:
 
@@ -50,7 +50,7 @@ https://screenpipe.com/api/user/data-sync/mcp
 
 ## Claude & Claude Duet
 
-**Screenpipe Cloud** is published in the public [Claude Directory](https://claude.ai/directory) and works across Claude web, desktop, mobile, and **Claude Duet** (Duet inherits connectors enabled on your Claude account):
+**Screenpipe Cloud** is listed in the [Claude Directory](https://claude.ai/directory). Test in a regular Claude chat first. Search inside Claude Duet has not been verified end to end.
 
 - Search for **Screenpipe Cloud** in [claude.ai/directory](https://claude.ai/directory) and click **Connect**
 - [Claude Duet setup guide](https://screenpipe.com/integrations/claude-duet)
