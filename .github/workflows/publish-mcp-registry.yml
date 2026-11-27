@@ -1,0 +1,29 @@
+name: Publish Screenpipe Cloud to MCP Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    if: github.repository == 'screenpipe/screenpipe-cloud' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install verified MCP publisher
+        run: |
+          set -euo pipefail
+          archive=mcp-publisher_linux_amd64.tar.gz
+          curl --fail --silent --show-error --location --output "$archive" "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.16/$archive"
+          echo "6e2f799550cf843c6fd3350498d56cc49be3dc0af1e6237eb0e6435c7a9d5c05  $archive" | sha256sum --check
+          tar xzf "$archive" mcp-publisher
+      - name: Publish registry metadata using repository identity
+        run: |
+          set -euo pipefail
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
